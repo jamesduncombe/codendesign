@@ -25,7 +25,7 @@ describe "Aggregator" do
     items.first.class.must_equal Item
   end
 
-  it 'returns the timeago' do
+  it 'returns the timeago from the html' do
     i = parse_html('https://news.layervault.com/stories')
     i.first.must_equal '11 minutes ago'
   end
