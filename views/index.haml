@@ -4,7 +4,7 @@
     %meta{charset:'utf-8'}
     %title Aggregator
     %style
-      = scss :style, style: :expanded
+      = scss :style, style: :compressed
   %body
     .decoration
       .inner
@@ -18,8 +18,12 @@
         %a{href:'https://news.layervault.com'} Designer News.
       %section.feeds
         - @items.each_with_index do |item,index|
-          %article
+          %article{class: item.from}
             %header
               %b= "#{index+1}."
               %a{href: item.link}
                 = item.title
+    %footer
+      %small
+        Build by
+        %a{href:'http://jamesduncombe.com'} JD

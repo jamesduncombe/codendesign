@@ -12,16 +12,16 @@ hacker_news = 'http://news.ycombinator.com/rss'
 design_html = 'https://news.layervault.com/stories'
 
 # simple struct to store things
-Item = Struct.new(:title, :description, :link)
+Item = Struct.new(:from, :title, :description, :link)
 
 def parse_xml(feed)
   doc = Nokogiri::XML(open(feed))
   items = []
   doc.search('item').each do |doc_item|
     items << Item.new(
+      (feed =~ /layervault/ ? 'design' : 'hacker'),
       doc_item.at('title').text,
       doc_item.at('description').text,
-      #doc_item.at('pubDate').text,
       doc_item.at('link').text
     )
   end

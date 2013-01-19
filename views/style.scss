@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
 
 body {
-  padding: 40px; 
+  padding: 42px; 
   font-family: "HelveticaNeue", helvetica, sans-serif; 
   font-size: 14px;
   color: #333;
@@ -24,10 +24,17 @@ h1 {
   letter-spacing: -0.06em;
 }
 
+h1 + p {
+  margin-bottom: 21px;
+}
+
 article {
-  padding: 21px;
+  padding: 21px 21px 24px;
   display: block;
   border-bottom: 1px solid #eceef1;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .container {
@@ -38,8 +45,18 @@ article {
 header b {
   margin-right: 21px;
   color: #c3c9d2;
-  font-size: 16px;
 }
+
+footer {
+  text-align: center;
+  color: #9FACC1;
+  margin-top: 21px;
+  small {
+    font-size: 14px;
+  }
+}
+
+// decoration at the top of the page
 
 .decoration {
   overflow: hidden;
