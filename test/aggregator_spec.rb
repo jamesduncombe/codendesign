@@ -25,9 +25,21 @@ describe "Aggregator" do
     items.first.class.must_equal Item
   end
 
-  it 'returns the timeago from the html' do
-    i = parse_html('https://news.layervault.com/stories')
-    i.first.must_equal '11 minutes ago'
+  it 'returns the correct external link depending on the feed' do
+    feed = 'https://news.layervault.com/?format=rss'
+    items = parse_xml(feed)
+    items.first.link_to_article.class.must_equal String
   end
+
+  it 'returns the correct comments link' do
+    feed = 'https://news.layervault.com/?format=rss'
+    items = parse_xml(feed)
+    items.first.link_to_comments.must_match 'layervault'
+  end
+
+  # it 'returns the timeago from the html' do
+  #   i = parse_html('https://news.layervault.com/stories')
+  #   i.first.must_equal '11 minutes ago'
+  # end
 
 end

@@ -4,7 +4,7 @@ body {
   padding: 42px; 
   font-family: "HelveticaNeue", helvetica, sans-serif; 
   font-size: 14px;
-  color: #333;
+  color: #555;
   line-height: 1.5;
   background: #eceef1;
 }
@@ -13,7 +13,7 @@ a {
   color: #2d72d9;
   text-decoration: none;
   &:visited {
-    color: #2d72d9;
+    color: #4E7BD0;
   }
 }
 
@@ -29,11 +29,18 @@ h1 + p {
 }
 
 article {
-  padding: 21px 21px 24px;
+  position: relative;
+  box-model: border-box;
+  padding: 21px 21px 24px 21px;
   display: block;
+  font-size: 16px;
   border-bottom: 1px solid #eceef1;
   &:last-child {
     border-bottom: none;
+  }
+  .comments {
+    font-size: 14px;
+    color: #9BB3D9;
   }
 }
 
@@ -43,7 +50,10 @@ article {
 }
 
 header b {
-  margin-right: 21px;
+  position: absolute;
+  right: 21px;
+  font-size: 50px;
+  line-height: .9;
   color: #c3c9d2;
 }
 

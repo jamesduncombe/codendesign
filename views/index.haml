@@ -13,16 +13,16 @@
     .container
       %h1 Aggregator
       %p
-        %a{href:'http://news.ycombinator.com/'} Hacker News
+        %a{href:'http://news.ycombinator.com'} Hacker News
         and
         %a{href:'https://news.layervault.com'} Designer News.
       %section.feeds
         - @items.each_with_index do |item,index|
-          %article{class: item.from}
+          %article{class: item.from, title: item.link_to_article}
             %header
-              %b= "#{index+1}."
-              %a{href: item.link}
-                = item.title
+              %b.number= index+1
+              %a.article{href: (item.link_to_article)}= item.title
+            %a.comments{href: item.link_to_comments }Comments
     %footer
       %small
         Build by

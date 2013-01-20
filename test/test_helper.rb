@@ -4,4 +4,4 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'rack/test'
 
-require_relative '../feed'
+require_relative '../aggregator'
