@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    awesome_print (1.1.0)
     haml (3.1.7)
+    json (1.7.6)
     minitest (4.4.0)
     nokogiri (1.5.6)
     rack (1.4.4)
@@ -21,8 +21,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
   haml
+  json
   minitest
   nokogiri
   rack-test

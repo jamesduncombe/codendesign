@@ -8,8 +8,6 @@ set :haml, format: :html5
 design_news = 'https://news.layervault.com/?format=rss'
 hacker_news = 'http://news.ycombinator.com/rss'
 
-design_html = 'https://news.layervault.com/stories'
-
 # Item - class to store the info for the model of RSS data
 class Item
 
@@ -59,15 +57,7 @@ def parse_xml(feed)
   items
 end
 
-# XML parser for the pages
-def parse_html(html)
-  doc = Nokogiri.HTML(open(html))
-  items = []
-  doc.search('.Story').each do |doc_item|
-    items << doc_item.at('.Timeago').text
-  end
-  items
-end
+# Routes
 
 get '/' do
 
