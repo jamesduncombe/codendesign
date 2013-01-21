@@ -2,7 +2,7 @@
 %html
   %head
     %meta{charset:'utf-8'}
-    %title Aggregator
+    %title Code &amp; Design
     %style
       = scss :style, style: :compressed
   %body
@@ -11,14 +11,15 @@
         - 25.times do
           .stripe
     .container
-      %h1 Aggregator
+      %h1 Code &amp; Design
       %p
+        Aggregated news from
         %a{href:'http://news.ycombinator.com'} Hacker News
         and
         %a{href:'https://news.layervault.com'} Designer News.
       %section.feeds
         - @items.each_with_index do |item,index|
-          %article{class: item.from, title: item.link_to_article}
+          %article{class: item.from}
             %header
               %b.number= index+1
               %a.article{href: (item.link_to_article)}= item.title

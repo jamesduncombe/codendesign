@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; }
 
 body {
-  padding: 42px; 
+  padding: 4%; 
   font-family: "HelveticaNeue", helvetica, sans-serif; 
   font-size: 14px;
   color: #555;
@@ -18,49 +18,53 @@ a {
 }
 
 h1 {
-  margin-bottom: 21px;
+  margin-bottom: 8px;
   line-height: 1;
   font-size: 42px;
   letter-spacing: -0.06em;
 }
 
 h1 + p {
+  font-size: 16px;
   margin-bottom: 21px;
 }
 
 article {
   position: relative;
   box-model: border-box;
-  padding: 21px 21px 24px 21px;
+  padding: 1.5% 1.5% 2%;
   display: block;
   font-size: 16px;
   border-bottom: 1px solid #eceef1;
   &:last-child {
     border-bottom: none;
   }
+  .link-host {
+    color: #c3c9d2;
+    margin-left: 21px;
+  }
   .comments {
     font-size: 14px;
     color: #9BB3D9;
+  }
+  header b {
+    position: absolute;
+    right: 21px;
+    font-size: 50px;
+    line-height: .9;
+    color: #c3c9d2;
   }
 }
 
 .container {
   background: #fff;
-  padding: 42px 21px 21px;
-}
-
-header b {
-  position: absolute;
-  right: 21px;
-  font-size: 50px;
-  line-height: .9;
-  color: #c3c9d2;
+  padding: 4% 2% 2%;
 }
 
 footer {
   text-align: center;
   color: #9FACC1;
-  margin-top: 21px;
+  padding: 21px 0;
   small {
     font-size: 14px;
   }
@@ -94,7 +98,17 @@ footer {
   }
 }
 
-.link-host {
-  color: #c3c9d2;
-  margin-left: 21px;
+// for the little guys...
+@media all and (max-device-width: 800px) and (min-device-width: 320px) {
+  body {
+    padding: 0;
+  }
+  article {
+    header b {
+      display: none;
+    }
+    .link-host {
+      display: none;
+    }
+  }
 }

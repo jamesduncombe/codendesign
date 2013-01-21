@@ -1,5 +1,6 @@
-%w(sinatra nokogiri open-uri sass haml).each do |f|
-  require f
+# Pull in required files
+%w(sinatra nokogiri open-uri sass haml).each do |dependency|
+  require dependency
 end
 
 set :haml, format: :html5
