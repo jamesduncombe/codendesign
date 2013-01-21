@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 %w(sinatra nokogiri open-uri sass haml).each do |f|
   require f
 end
