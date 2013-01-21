@@ -37,6 +37,10 @@ class Item
     end
   end
 
+  def link_host
+    URI(self.link_to_article).host
+  end
+
 end
 
 # XML parser for the feeds

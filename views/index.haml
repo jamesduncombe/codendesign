@@ -22,6 +22,7 @@
             %header
               %b.number= index+1
               %a.article{href: (item.link_to_article)}= item.title
+              %span.link-host= item.link_host
             %a.comments{href: item.link_to_comments }Comments
     %footer
       %small
