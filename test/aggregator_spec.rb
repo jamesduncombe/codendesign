@@ -7,9 +7,10 @@ def app
 end
 
 describe "Aggregator" do
+  
   it 'returns the homepage' do
     get '/'
-    last_response.body.must_match 'Aggregator'
+    last_response.body.must_match 'Code &amp; Design'
   end
 
   it 'reads the XML feed' do
@@ -36,10 +37,5 @@ describe "Aggregator" do
     items = parse_xml(feed)
     items.first.link_to_comments.must_match 'layervault'
   end
-
-  # it 'returns the timeago from the html' do
-  #   i = parse_html('https://news.layervault.com/stories')
-  #   i.first.must_equal '11 minutes ago'
-  # end
 
 end

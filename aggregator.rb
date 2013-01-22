@@ -22,7 +22,9 @@ class Item
 
   def link_to_article
     if self.from == 'design'
-      self.description.strip
+      # protect against questions asked on designer news
+      return self.description if self.description =~ /^https?\:\/\//
+      self.link
     else
       self.link
     end
@@ -48,11 +50,11 @@ def parse_xml(feed)
   items = []
   doc.search('item').each do |doc_item|
     items << Item.new(
-      from: (feed =~ /layervault/ ? 'design' : 'hacker'),
-      title: doc_item.at('title').text,
-      description: doc_item.at('description').text,
-      link: doc_item.at('link').text,
-      comments: (doc_item.at('comments').text unless doc_item.at('comments').nil?)
+      from:         (feed =~ /layervault/ ? 'design' : 'hacker'),
+      title:        doc_item.at('title').text,
+      description:  doc_item.at('description').text.strip!,
+      link:         doc_item.at('link').text,
+      comments:     (doc_item.at('comments').text unless doc_item.at('comments').nil?)
     )
   end
   items
