@@ -71,7 +71,7 @@ get '/' do
   # this interpolates the 2 arrays [[1,1], [2,2]] etc
   # then flatten them and remove any nil keys
   # then finally make sure only unique titles are shown
-  @items = hn.zip(dn).flatten!.compact.uniq!(&:title)
+  @items = hn.zip(dn).flatten!.compact
 
   # render the template
   haml :index
