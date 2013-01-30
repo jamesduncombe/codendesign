@@ -23,7 +23,7 @@ class Item
   def link_to_article
     if self.from == 'design'
       # protect against questions asked on designer news
-      return self.description if self.description =~ /^https?\:\/\//
+      return self.description if !(self.description =~ /^https?\:\/\//)
       self.link
     else
       self.link
@@ -39,7 +39,8 @@ class Item
   end
 
   def link_host
-    URI(self.link_to_article).host
+    # URI gets freaked out if there's a hash in the address
+    URI(self.link_to_article.split('#').first).host
   end
 
 end
