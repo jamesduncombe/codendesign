@@ -1,7 +1,12 @@
-# Pull in required files
-%w(sinatra nokogiri open-uri sass haml).each do |dependency|
-  require dependency
-end
+#
+# Main Aggregator
+#
+
+require 'rubygems'
+require 'bundler'
+Bundler.require
+require 'open-uri'
+require 'sinatra'
 
 set :haml, format: :html5
 
