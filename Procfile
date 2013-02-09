@@ -1,1 +1,1 @@
-web: ruby aggregator.rb -s puma -p $PORT
+web: ruby app.rb -s puma -p $PORT
