@@ -2,14 +2,6 @@ require_relative '../test_helper.rb'
 
 describe Parse do
 
-  # describe '#self.from' do
-  #   it { Parse.from('https://news.layervault.com/?format=rss').must_equal 'design' }
-  # end
-
-  # describe '#self.link' do
-  #   it { Parse.from('https://news.layervault.com/?format=rss').must_equal 'design' }
-  # end
-
   describe '#self.feed_data' do
     it 'returns the feed data' do
       feed = Parse.feed_data(Parse::HACKER_NEWS)
@@ -39,7 +31,5 @@ describe Parse do
       data.class.must_equal Array
     end
   end
-
-
 
 end
