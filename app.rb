@@ -14,7 +14,7 @@ set :haml, format: :html5
 
 # XML feeds
 DESIGN_NEWS = 'https://news.layervault.com/?format=rss'
-HACKER_NEWS = 'http://news.ycombinator.com/rss'
+HACKER_NEWS = 'https://news.ycombinator.com/rss'
 
 # Item - class to store the info for the model of RSS data
 class Item
