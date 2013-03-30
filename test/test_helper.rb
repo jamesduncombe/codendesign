@@ -4,4 +4,5 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'rack/test'
 
-require_relative '../aggregator'
+require_relative '../lib/item.rb'
+require_relative '../lib/parse.rb'
