@@ -6,7 +6,19 @@ It's using Sinatra as it's nice and lightweight.
 
 Oh, and I've added some simple tweet button which kind of prefils a tweet ready to post.
 
-Stuff to do:
+## Build
+
+To build, clone the repo then just run `bundle install` to install the required gems.
+
+I'm using [Foreman](https://github.com/ddollar/foreman) to run it locally hence the `Procfile`. Check [this link](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) for getting started instructions on Foreman
+
+So, once Foreman is installed, you just need to run `foreman start` in your terminal.
+
+…and it will find the `Procfile` and start the web server (which is currently [Puma](http://puma.io/) - no special reason, I was just playing!).
+
+Browse to `http://localhost:5000` and you should be golden.
+
+## Todo
 
 - Add some kind of caching. At the moment the feeds are pulled and aggregated on the fly which is pretty bad.
 
