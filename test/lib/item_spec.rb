@@ -28,7 +28,7 @@ describe Item do
   describe '#tweet' do
     it 'returns a tweet' do
       item
-      item.tweet.must_equal 'This is a title via @hackernews'
+      item.tweet.must_equal "This is a title - #{item.link_to_article} via @hackernews"
     end
   end
 
