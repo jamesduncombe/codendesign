@@ -32,6 +32,14 @@ class Item
     URI(self.link_to_article.split('#').first).host
   end
 
+  def tweet
+    if self.from == 'design'
+      "#{self.title} - #{self.link_to_article} via news.layervault.com"
+    else
+      "#{self.title} - #{self.link_to_article} via @hackernews"
+    end
+  end
+
   def to_hash
     self.instance_variables.inject({}) do |hash,element|
       hash[element.to_s.delete('@')] = instance_variable_get(element)

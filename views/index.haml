@@ -25,7 +25,16 @@
               %a.article{href: (item.link_to_article)}= item.title
               %span.link-host= item.link_host
             %a.comments{href: item.link_to_comments }Comments
+            %a.tweet{href: '#tweet', data: { tweet: item.tweet }}Tweet
     %footer
       %small
         Build by
         %a{href:'http://jamesduncombe.com'} JD
+
+    :javascript
+      document.querySelector('.feeds').addEventListener('mousedown', function(e) {
+        if (e.target.hash === '#tweet') {
+          e.preventDefault();
+          alert(e.target.dataset.tweet);
+        }
+      }, false);

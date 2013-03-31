@@ -43,7 +43,7 @@ article {
     color: #c3c9d2;
     margin-left: 21px;
   }
-  .comments {
+  .comments, .tweet {
     font-size: 14px;
     color: #9BB3D9;
   }
@@ -53,6 +53,9 @@ article {
     font-size: 50px;
     line-height: .9;
     color: #c3c9d2;
+  }
+  .comments {
+    margin-right: 21px;
   }
 }
 
