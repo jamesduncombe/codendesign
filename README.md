@@ -10,7 +10,7 @@ Oh, and I've added some simple tweet button which kind of prefils a tweet ready 
 
 To build, clone the repo then just run `bundle install` to install the required gems.
 
-I'm using [Foreman](https://github.com/ddollar/foreman) to run it locally hence the `Procfile`. Check [this link](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) for getting started instructions on Foreman
+I'm using [Foreman](https://github.com/ddollar/foreman) to run it locally hence the `Procfile`. Check [this link](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) for getting started instructions on Foreman.
 
 So, once Foreman is installed, you just need to run `foreman start` in your terminal.
 
@@ -20,6 +20,6 @@ Browse to `http://localhost:5000` and you should be golden.
 
 ## Todo
 
-- Add some kind of caching. At the moment the feeds are pulled and aggregated on the fly which is pretty bad.
+- Add some kind of caching - At the moment the feeds are pulled and aggregated on the fly which is pretty bad.
 
 Please feel free to fork it and improve :)
