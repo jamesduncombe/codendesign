@@ -12,7 +12,7 @@ class Item
   def link_to_article
     if self.from == 'design'
       # protect against questions asked on designer news
-      return self.description if self.description =~ /^https?\:\/\//
+      return self.description if self.description.start_with? 'http'
       self.link
     else
       self.link
