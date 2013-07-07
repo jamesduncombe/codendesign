@@ -1,7 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    haml (3.1.7)
+    haml (4.0.3)
+      tilt
     minitest (4.4.0)
     nokogiri (1.5.6)
     puma (1.6.3)
@@ -22,7 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  haml
+  haml (~> 4.0.0)
   minitest
   nokogiri
   puma

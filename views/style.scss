@@ -1,8 +1,8 @@
 * { margin: 0; padding: 0; }
 
 body {
-  padding: 4%; 
-  font-family: "HelveticaNeue", helvetica, sans-serif; 
+  padding: 4%;
+  font-family: "HelveticaNeue", helvetica, sans-serif;
   font-size: 14px;
   color: #555;
   line-height: 1.5;
@@ -99,6 +99,14 @@ footer {
   &:nth-child(4n) {
     background: #46D935;
   }
+}
+
+.pocket-btn {
+  display: inline-block;
+  margin-left: 21px;
+  position: relative;
+  top: 8px;
+  color: #fff;
 }
 
 // for the little guys...
