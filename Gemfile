@@ -17,3 +17,6 @@ gem 'haml', '~> 4.0.0'
 gem 'sass'
 
 gem 'iron_cache'
+
+gem 'memcachier'
+gem 'dalli'

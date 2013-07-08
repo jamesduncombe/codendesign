@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dalli (2.6.4)
     haml (4.0.3)
       tilt
     iron_cache (1.4.0)
       iron_core (>= 0.5.1)
     iron_core (0.6.2)
       rest (>= 2.2.0)
+    memcachier (0.0.2)
     mime-types (1.23)
     minitest (4.4.0)
     net-http-persistent (2.8)
@@ -34,8 +36,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dalli
   haml (~> 4.0.0)
   iron_cache
+  memcachier
   minitest
   nokogiri
   puma
