@@ -1,9 +1,9 @@
 require_relative '../test_helper.rb'
 
-describe Item do
+describe CD::Item do
 
   let(:item) do
-    Item.new(
+    CD::Item.new(
       from: 'hacker',
       title: 'This is a title',
       description: 'This is a description',

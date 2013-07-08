@@ -9,7 +9,7 @@ def app
 end
 
 describe "Aggregator" do
-  
+
   it 'returns the homepage' do
     get '/'
     last_response.body.must_match 'Code &amp; Design'
