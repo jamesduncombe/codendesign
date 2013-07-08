@@ -2,11 +2,9 @@ module CD
   module Cache
 
     def cache(key_name, options = {}, &block)
-      #@client ||= IronCache::Client.new
-      #@cache_store ||= @client.cache(IRON_CACHE)
       @cache_store ||= Dalli::Client.new(
         ENV['MEMCACHIER_SERVERS'],
-        { expires_in: 3600, username: ENV['MEMCACHIER_USERNAME'], password: ENV['MEMCACHIER_PASSWORD'] })
+        { expires_in: 3600 })
       if @cache_store.get(key_name)
         puts 'cache hit'
       else
