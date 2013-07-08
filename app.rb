@@ -22,9 +22,11 @@ require './lib/cache.rb'
 
 set :haml, format: :html5
 
+
 set :root, File.dirname(__FILE__)
 set :cache_enabled, true
 set :cache_output_dir, Proc.new { File.join(root, 'public', 'cache') }
+set :cache, Dalli::Client.new
 
 #include CD::Cache
 
