@@ -7,9 +7,8 @@
       = scss :style, style: :compressed
   %body
     .decoration
-      .inner
-        - 25.times do
-          .stripe
+      - 25.times do
+        %hr
     .container
       %h1 Code &amp; Design
       %p
@@ -33,6 +32,12 @@
       %small
         Build by
         %a{href:'http://jamesduncombe.com'}JD
+        \-
+        Feeds:
+        %a{href:'/feed.json'}JSON
+        or
+        %a{href:'/feed.xml'}XML
+
 
     :javascript
       document.querySelector('.feeds').addEventListener('mousedown', function(e) {
@@ -41,3 +46,11 @@
           alert(e.target.dataset.tweet);
         }
       }, false);
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-9765692-15', 'codendesign.co');
+      ga('send', 'pageview');

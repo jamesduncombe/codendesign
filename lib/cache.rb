@@ -3,7 +3,7 @@ module CD
 
     def cache(key_name, options = {}, &block)
       @cache_store ||= Dalli::Client.new(
-        ENV['MEMCACHIER_SERVERS'],
+        '127.0.0.1:11211',
         { expires_in: 3600 })
       if @cache_store.get(key_name)
         puts 'cache hit'

@@ -5,3 +5,4 @@ bin
 .rvmrc
 config
 .env
+Capfile

@@ -29,8 +29,7 @@ module CD
     end
 
     def link_host
-      # URI gets freaked out if there's a hash in the address
-      URI(self.link_to_article.split('#').first).host
+      URI(self.link_to_article.split('#').first.gsub(/[^\w_\/-:.]*/, '')).host
     end
 
     def tweet
