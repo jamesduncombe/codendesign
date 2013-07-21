@@ -6,6 +6,9 @@ It's using Sinatra as it's nice and lightweight.
 
 Oh, and I've added some simple tweet button which kind of prefils a tweet ready to post.
 
+I've also added a Pocket button for each article to make it easier for
+those who use Pocket.
+
 ## Build
 
 To build, clone the repo then just run `bundle install` to install the required gems.
@@ -17,9 +20,5 @@ So, once Foreman is installed, you just need to run `foreman start` in your term
 …and it will find the `Procfile` and start the web server (which is currently [Puma](http://puma.io/) - no special reason, I was just playing!).
 
 Browse to `http://localhost:5000` and you should be golden.
-
-## Todo
-
-- Add some kind of caching - At the moment the feeds are pulled and aggregated on the fly which is pretty bad.
 
 Please feel free to fork it and improve :)
