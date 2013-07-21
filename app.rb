@@ -24,7 +24,7 @@ set :haml, format: :html5
 # Routes
 
 before do
-  cache_control :public, max_age: 3600 # 1 hour
+  cache_control :public, max_age: 3550 # just under an hour
   @items = CD::Parse.get_feeds
   etag CD::Parse.md5(@items)
 end
