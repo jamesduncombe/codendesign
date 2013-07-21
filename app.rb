@@ -1,23 +1,13 @@
 #
 # Main Aggregator
 #
-
 require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require 'open-uri'
+%w(open-uri sinatra rss json).each { |f| require f }
 
-require 'sinatra'
-
-require 'rss'
-require 'json'
-
-require './lib/parse.rb'
-require './lib/item.rb'
-require './lib/rss.rb'
-require './lib/json.rb'
-require './lib/cache.rb'
+%w(parse item rss json).each { |f| require "./lib/#{f}"}
 
 set :haml, format: :html5
 
