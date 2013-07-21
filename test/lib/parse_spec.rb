@@ -32,4 +32,11 @@ describe CD::Parse do
     end
   end
 
+  describe '#md5' do
+    it 'returns a md5 for the etag using the array of items' do
+      data =  CD::Parse.get_feeds
+      puts CD::Parse.md5(data)
+    end
+  end
+
 end

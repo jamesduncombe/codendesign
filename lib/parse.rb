@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'digest/md5'
 
 module CD
   class Parse
@@ -46,6 +47,10 @@ module CD
       # then finally make sure only unique titles are shown
       hn.zip(dn).flatten!.compact
 
+    end
+
+    def self.md5(feed_data)
+      Digest::MD5.hexdigest(feed_data.first.title.to_s)
     end
 
     private

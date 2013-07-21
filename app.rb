@@ -25,22 +25,21 @@ set :haml, format: :html5
 
 before do
   cache_control :public, max_age: 3600 # 1 hour
+  @items = CD::Parse.get_feeds
+  etag CD::Parse.md5(@items)
 end
 
 get '/' do
-  @items = CD::Parse.get_feeds
   haml :index
 end
 
 # feed address
 get '/feed.xml' do
   content_type = 'application/xml'
-  @items = CD::Parse.get_feeds
   CD::Rss.new({ feed_items: @items }).get_rss
 end
 
 get '/feed.json' do
   content_type = 'application/json'
-  @items = CD::Parse.get_feeds
   CD::Json.new({ feed_items: @items }).get_json
 end
