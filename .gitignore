@@ -3,6 +3,8 @@
 .bundle
 bin
 .rvmrc
+.ruby-gemset
+.ruby-version
 config
 .env
 Capfile
