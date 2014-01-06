@@ -23,7 +23,8 @@ get '/' do
   haml :index
 end
 
-# feed address
+# Feed addresses
+
 get '/feed.xml' do
   content_type = 'application/xml'
   CD::Rss.new({ feed_items: @items }).get_rss

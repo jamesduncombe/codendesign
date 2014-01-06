@@ -38,14 +38,10 @@ module CD
       hnd = self.feed_data(HACKER_NEWS)
       dnd = self.feed_data(DESIGN_NEWS)
 
-      # parse the feeds
       hn, dn = self.parse_xml(hnd, HACKER_NEWS), self.parse_xml(dnd, DESIGN_NEWS)
 
-      # zip the arrays together
-      # this interpolates the 2 arrays [[1,1], [2,2]] etc
-      # then flatten them and remove any nil keys
-      # then finally make sure only unique titles are shown
-      hn.zip(dn).flatten!.compact
+      hn << dn
+      hn.flatten!.compact
 
     end
 
