@@ -25,9 +25,6 @@
               %span.link-host= item.link_host
             %a.comments{href: item.link_to_comments }Comments
             %a.tweet{href: '#tweet', data: { tweet: item.tweet }}Tweet
-            %a{href:'https://getpocket.com/save', class: 'pocket-btn', data: { lang: 'en', save_url: item.link_to_article, pocket_count: 'none', pocket_align: 'left' }}
-              Pocket
-            = haml :pocket
     %footer
       %small
         Build by
