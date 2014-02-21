@@ -22,7 +22,7 @@ module CD
 
     def link_to_comments
       if self.from == 'design'
-        self.link
+        self.link.gsub /click\//, ''
       else
         self.comments
       end
