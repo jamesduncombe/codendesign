@@ -9,6 +9,8 @@ Oh, and I've added some simple tweet button which kind of prefils a tweet ready 
 I've also added a Pocket button for each article to make it easier for
 those who use Pocket.
 
+You can find codendesign running at [www.codendesign.co](http://www.codendesign.co).
+
 ## Build
 
 To build, clone the repo then just run `bundle install` to install the required gems.
