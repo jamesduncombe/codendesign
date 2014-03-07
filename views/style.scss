@@ -1,3 +1,22 @@
+
+$stops: 23px, 59px, 113px, 137px, 163px, 191px;
+$stripes: 5;
+$base_colour: hsl(0, 85%, 59%);
+
+@function wild_thing($base_colour) {
+  $content: "";
+  @for $i from 1 through $stripes {
+    $last_i: $i + 1;
+    $colour: adjust-hue($base_colour, $i * 10 * 10);
+    $content: $content + "#{$colour} #{nth($stops, $i)},";
+    $content: $content + " #{$colour} #{nth($stops, $last_i)}";
+    @if $i < $stripes {
+      $content: $content + ",";
+    }
+  }
+  @return unquote($content);
+}
+
 * { margin: 0; padding: 0; }
 
 body {
@@ -80,56 +99,31 @@ footer {
   height: 7px;
   width: 100%;
   overflow: hidden;
-}
-
-hr {
-  width: 9%;
-  height: 7px;
-  float: left;
-  border: none;
-  background: #D96D28;
-  &:nth-child(2n) {
-    background: #D93BC9;
-    width: 7%;
-  }
-  &:nth-child(3n) {
-    background: #D96D28;
-    width: 3%;
-  }
-  &:nth-child(5n) {
-    background: #46D935;
-    width: 8%;
-  }
-  &:nth-child(7n) {
-    background: #2D72D9;
-    width: 6%;
-  }
-  &:nth-child(11n) {
-    background: #D96D28;
-    width: 2%;
-  }
-  &:nth-child(13n) {
-    background: #D96D28;
-    width: 4%;
-  }
-}
-
-.pocket-btn {
-  display: inline-block;
-  margin-left: 21px;
-  position: relative;
-  top: 8px;
-  color: #fff;
+  background: repeating-linear-gradient(90deg, wild_thing($base_colour));
 }
 
 // for the little guys...
-@media all and (max-device-width: 800px) and (min-device-width: 320px) {
+
+@media screen and (max-width: 900px) {
+  header {
+    b {
+      display: none;
+    }
+  }
+}
+@media all and (max-width: 750px) {
   body {
     padding: 0;
+    font-size: 14px;
   }
   article {
-    header b {
-      display: none;
+    font-size: 14px;
+    padding: 21px 1.5% 25px;
+    header {
+      .article {
+        display: block;
+        margin-bottom: 11px;
+      }
     }
     .link-host {
       display: none;
