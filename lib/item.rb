@@ -22,14 +22,16 @@ module CD
 
     def link_to_comments
       if self.from == 'design'
-        self.link.gsub /click\//, ''
+        self.link.gsub(/click\//, '')
       else
         self.comments
       end
     end
 
     def link_host
-      URI(self.link_to_article.split('#').first.gsub(/[^\w_\/-:.]*/, '')).host
+      URI(self.link_to_article.split('#').first.gsub(/[^\w_\/-:.]+/, '')).host
+    rescue
+      'woops, can\'t parse'
     end
 
     def tweet
