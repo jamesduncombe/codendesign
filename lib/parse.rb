@@ -5,7 +5,7 @@ require 'digest/md5'
 module CD
   class Parse
 
-    DESIGN_NEWS = 'https://news.layervault.com/?format=rss'
+    DESIGN_NEWS = 'https://www.designernews.co/?format=rss'
     HACKER_NEWS = 'https://news.ycombinator.com/rss'
 
     def self.record(doc_item, feed)
@@ -40,8 +40,8 @@ module CD
 
       hn, dn = self.parse_xml(hnd, HACKER_NEWS), self.parse_xml(dnd, DESIGN_NEWS)
 
-      hn << dn
-      hn.flatten!.compact
+      merged = hn.zip(dn)
+      merged.flatten!.compact
 
     end
 
