@@ -21,11 +21,7 @@ module CD
     end
 
     def link_to_comments
-      if self.from == 'design'
-        self.link.gsub(/click\//, '')
-      else
-        self.comments
-      end
+      self.comments
     end
 
     def link_host
@@ -36,7 +32,7 @@ module CD
 
     def tweet
       if self.from == 'design'
-        "#{self.title} - #{self.link_to_article} via news.layervault.com"
+        "#{self.title} - #{self.link_to_article} via @designernewsbot"
       else
         "#{self.title} - #{self.link_to_article} via @hackernews"
       end

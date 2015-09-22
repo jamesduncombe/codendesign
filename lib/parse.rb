@@ -52,7 +52,7 @@ module CD
     private
 
       def self.from(feed)
-        feed =~ /layervault/ ? 'design' : 'hacker'
+        feed =~ /designernews/ ? 'design' : 'hacker'
       end
 
       def self.title(doc_item)
@@ -68,7 +68,11 @@ module CD
       end
 
       def self.comments(doc_item)
-        doc_item.at('comments').text unless doc_item.at('comments').nil?
+        if doc_item.at('comments').nil?
+          doc_item.at('link').text.gsub(/click\//, '')
+        else
+          doc_item.at('comments').text
+        end
       end
 
       def self.updated_at(doc_item)
