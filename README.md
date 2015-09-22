@@ -1,6 +1,6 @@
 # Code & Design
 
-The idea is to bring [HackerNews](https://news.ycombinator.com/) and [DesignNews](https://news.layervault.com) together. I wanted a place where I could view these feeds at the same time.
+The idea is to bring [HackerNews](https://news.ycombinator.com/) and [DesignNews](https://www.designernews.co/) together. I wanted a place where I could view these feeds at the same time.
 
 It's using Sinatra as it's nice and lightweight.
 
