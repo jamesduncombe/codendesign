@@ -7,9 +7,11 @@ Bundler.require
 
 %w(open-uri sinatra rss json).each { |f| require f }
 
+Dir['./lib/sources/*.rb'].each { |f| require f }
+
 %w(parse item rss json).each { |f| require "./lib/#{f}"}
 
-set :haml, format: :html5
+set :slim, format: :html
 
 # Routes
 
@@ -20,7 +22,7 @@ before do
 end
 
 get '/' do
-  haml :index
+  slim :index
 end
 
 # Feed addresses

@@ -38,6 +38,28 @@ a {
   }
 }
 
+$sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews';
+
+@each $site in $sites {
+  .#{$site} + section .#{$site} {
+    display: block;
+  }
+  nav.#{$site} [data-from="#{$site}"] {
+    background: rgba(0,0,0,0.1);
+  }
+}
+
+nav {
+  a {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 1% 2%;
+    margin-right: 2%;
+  }
+  margin: 3rem 0;
+}
+
 h1 {
   margin-bottom: .8rem;
   line-height: 1;
@@ -52,9 +74,8 @@ h1 + p {
 
 article {
   position: relative;
-  box-model: border-box;
-  padding: 1.5% 1.5% 2%;
-  display: block;
+  padding: 1.5% 0 2%;
+  display: none;
   font-size: 1.6rem;
   border-bottom: 1px solid #eceef1;
   &:last-child {
@@ -62,7 +83,13 @@ article {
   }
   .link-host {
     color: #c3c9d2;
-    margin-left: 2.1rem;
+    font-size: 1.4rem;
+    margin-right: 2%;
+  }
+  .pub-date {
+    color: #c3c9d2;
+    margin-right: 2%;
+    font-size: 1.4rem;
   }
   .comments, .tweet {
     font-size: 1.4rem;
@@ -83,6 +110,7 @@ article {
 .container {
   background: #fff;
   padding: 4% 2% 2%;
+  margin-bottom: 1rem;
 }
 
 footer {

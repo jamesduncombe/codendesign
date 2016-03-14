@@ -10,7 +10,7 @@ module CD
         maker.channel.author = 'James Duncombe'
         maker.channel.updated = Time.now.to_s
         maker.channel.title = 'Code & Design News'
-        maker.channel.link = 'http://codendesign.herokuapp.com'
+        maker.channel.link = 'http://codendesign.co'
         maker.channel.description = 'A mashup of Hackers News and Design News stories from their front pages'
 
         @feed_items.each do |item|

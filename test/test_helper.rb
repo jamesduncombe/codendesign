@@ -2,6 +2,7 @@
 ENV['RACK_ENV'] = 'test'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'awesome_print'
 require 'rack/test'
 
 require_relative '../lib/item.rb'

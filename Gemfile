@@ -7,11 +7,12 @@ group :test, :development do
   gem 'rack-test'
   gem 'mina'
   gem 'puma'
+  gem 'awesome_print'
 end
 
 gem 'nokogiri'
 
-gem 'haml', '~> 4.0.0'
+gem 'slim'
 gem 'sass'
 
 # Caching
