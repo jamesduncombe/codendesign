@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'digest/md5'
 
-require './lib/sources/source'
+require './lib/rss_parser'
 
 Dir['./lib/sources/*.rb'].each { |f| require f }
 
@@ -20,8 +20,9 @@ module CD
       FEEDS
         .each_with_object([]) { |feed, accm| accm << feed.parse }
         .flatten
-        .compact
-        .sort { |a,b| b.updated_at <=> a.updated_at }
+        .each_with_object({}) { |item, accm| accm[item.md5] = item }
+        .values
+        .sort
     end
 
     def self.md5(feed_data)

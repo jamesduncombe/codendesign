@@ -1,4 +1,5 @@
 require_relative '../test_helper.rb'
+require 'digest/md5'
 
 describe CD::Parse do
 
@@ -11,7 +12,7 @@ describe CD::Parse do
 
   describe '#md5' do
     it 'returns a md5 for the etag using the array of items' do
-      data =  CD::Parse.get_feeds
+      data = CD::Parse.get_feeds
       puts CD::Parse.md5(data)
     end
   end

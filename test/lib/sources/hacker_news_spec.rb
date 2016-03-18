@@ -1,6 +1,6 @@
 require_relative '../../test_helper.rb'
 
-describe Sources::TheHackerNews do
+describe Sources::HackerNews do
 
   describe 'get_feed' do
     it 'gets the feed' do

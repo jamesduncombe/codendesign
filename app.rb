@@ -1,22 +1,21 @@
 #
 # Main Aggregator
 #
-require 'rubygems'
 require 'bundler'
 Bundler.require
 
-%w(open-uri sinatra rss json).each { |f| require f }
+%w(open-uri rss json).each { |f| require f }
+
+%w(parse item rss json rss_parser).each { |f| require "./lib/#{f}"}
 
 Dir['./lib/sources/*.rb'].each { |f| require f }
-
-%w(parse item rss json).each { |f| require "./lib/#{f}"}
 
 set :slim, format: :html
 
 # Routes
 
 before do
-  cache_control :public, max_age: 3550 # just under an hour
+  cache_control :public, max_age: 3550
   @items = CD::Parse.get_feeds
   etag CD::Parse.md5(@items)
 end
