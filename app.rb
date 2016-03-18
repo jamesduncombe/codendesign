@@ -4,7 +4,7 @@
 require 'bundler'
 Bundler.require
 
-%w(open-uri rss json).each { |f| require f }
+%w(open-uri cgi rss).each { |f| require f }
 
 %w(parse item rss json rss_parser).each { |f| require "./lib/#{f}"}
 
@@ -33,5 +33,5 @@ end
 
 get '/feed.json' do
   content_type = 'application/json'
-  CD::Json.new({ feed_items: @items }).get_json
+  CD::Json.get_json(@items)
 end

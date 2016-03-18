@@ -3,6 +3,8 @@ module CD
 
     include Comparable
 
+    attr_reader :params
+
     attr_accessor :from,
                   :title,
                   :description,
@@ -13,9 +15,10 @@ module CD
                   :link_to_comments,
                   :link_host
 
-    def initialize(*args)
-      args.first.each do |k,v|
-        instance_variable_set("@#{k}", v) unless v.nil?
+    def initialize(params = {})
+      @params = params
+      params.each do |k,v|
+        instance_variable_set("@#{k}", v)
       end
     end
 
@@ -28,10 +31,7 @@ module CD
     end
 
     def to_hash
-      self.instance_variables.inject({}) do |hash,element|
-        hash[element.to_s.delete('@')] = instance_variable_get(element)
-        hash
-      end
+      params
     end
 
   end

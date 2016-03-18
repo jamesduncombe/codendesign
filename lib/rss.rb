@@ -8,10 +8,10 @@ module CD
     def get_rss
       rss = RSS::Maker.make("2.0") do |maker|
         maker.channel.author = 'James Duncombe'
-        maker.channel.updated = Time.now.to_s
+        maker.channel.lastBuildDate = DateTime.now.rfc822
         maker.channel.title = 'Code & Design News'
         maker.channel.link = 'http://codendesign.co'
-        maker.channel.description = 'A mashup of Hackers News and Design News stories from their front pages'
+        maker.channel.description = 'Aggregator of Code, Security and Design news sites.'
 
         @feed_items.each do |item|
           maker.items.new_item do |new_item|
@@ -19,7 +19,7 @@ module CD
             new_item.title = item.title
             new_item.description = item.description
             new_item.comments = item.comments
-            new_item.updated = item.updated_at
+            new_item.pubDate = item.updated_at.rfc822
           end
         end
 

@@ -8,7 +8,7 @@ module Sources
         parse_feed(xml) do |item|
           {
             title: item.at('title').text,
-            description: item.at('description').text.strip!,
+            description: CGI.escape_html(item.at('description').text.strip),
             link: item.at('link').text,
             comments: item.at('link').text.gsub(/click\//, ''),
             updated_at: updated_at(item),
