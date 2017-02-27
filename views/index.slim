@@ -13,10 +13,14 @@ html
       h1 Code &amp; Design
       p Aggregator of Code, Security and Design news sites.
       nav
-        a href="#" data-from="hackernews" Hacker News
-        a href="#" data-from="designernews" Designer News
-        a href="#" data-from="thehackernews" The Hacker News
-        a href="#" data-from="arssecurity" Ars Security
+        a href="#" data-from="hackernews" data-short="hn"
+          span Hacker News
+        a href="#" data-from="designernews" data-short="dn"
+          span Designer News
+        a href="#" data-from="thehackernews" data-short="thn"
+          span The Hacker News
+        a href="#" data-from="arssecurity" data-short="ars"
+          span Ars Security
       section.feeds
         - @items.each_with_index do |item,index|
           article class="#{item.from}"

@@ -34,7 +34,7 @@ a {
   color: #2d72d9;
   text-decoration: none;
   &:visited {
-    color: #4E7BD0;
+    color: #ef3eef;
   }
 }
 
@@ -45,19 +45,21 @@ $sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews';
     display: block;
   }
   nav.#{$site} [data-from="#{$site}"] {
-    background: rgba(0,0,0,0.1);
+    background: #eceef1;
   }
 }
 
 nav {
+  margin-bottom: 1rem;
   a {
     background: none;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    padding: 1% 2%;
-    margin-right: 2%;
+    padding: 1% 0;
+    text-align: center;
+    width: 25%;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: darken(#9BB3D9, 10%);
   }
-  margin: 3rem 0;
 }
 
 h1 {
@@ -141,10 +143,25 @@ footer {
     }
   }
 }
-@media all and (max-width: 750px) {
+@media (max-width: 750px) {
   body {
     padding: 0;
     font-size: 1.4rem;
+  }
+  nav {
+    width: (100 / 96) * 100%;
+    margin-left: (100 / 96) * -2%;
+    a {
+      font-size: 1.2rem;
+      padding: 2% 0;
+      span {
+        display: none;
+      }
+      &::before {
+        content: attr(data-short);
+        text-transform: uppercase;
+      }
+    }
   }
   article {
     font-size: 1.4rem;
