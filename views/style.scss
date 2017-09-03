@@ -59,6 +59,9 @@ nav {
     display: inline-block;
     font-size: 1.2rem;
     color: darken(#9BB3D9, 10%);
+    &:visited {
+      color: darken(#9BB3D9, 10%);
+    }
     span {
       pointer-events: none;
     }
