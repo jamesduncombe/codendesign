@@ -7,7 +7,7 @@ $base_colour: hsl(0, 85%, 59%);
   $content: "";
   @for $i from 1 through $stripes {
     $last_i: $i + 1;
-    $colour: adjust-hue($base_colour, $i * 10 * 10);
+    $colour: transparentize(adjust-hue($base_colour, $i * 10 * 10), 0.2);
     $content: $content + "#{$colour} #{nth($stops, $i)},";
     $content: $content + " #{$colour} #{nth($stops, $last_i)}";
     @if $i < $stripes {
@@ -17,6 +17,30 @@ $base_colour: hsl(0, 85%, 59%);
   @return unquote($content);
 }
 
+$body-bg: #eceef1;
+$body-bg-dark: #2b3138;
+
+$body-copy: #555;
+$body-copy-dark: #80838a;
+
+$link: #2d72d9;
+$link-dark: #126dda;
+
+$visited: #ef3eef;
+$visited-dark: #c518c5;
+
+$nav-bg: #eceef1;
+$nav-bg-dark: #2b3138;
+
+$container-bg: #fff;
+$container-bg-dark: #22262b;
+
+$article-border: #eceef1;
+$article-border-dark: #2b3138;
+
+$recessed: #c3c9d2;
+$recessed-dark: #757e89;
+
 * { margin: 0; padding: 0; }
 
 html { font-size: 62.5%; }
@@ -25,16 +49,25 @@ body {
   padding: 4%;
   font-family: "HelveticaNeue", helvetica, sans-serif;
   font-size: 1.4rem;
-  color: #555;
+  color: $body-copy;
   line-height: 1.5;
-  background: #eceef1;
+  background: $body-bg;
+  &.night {
+    color: $body-copy-dark;
+    background: $body-bg-dark;
+  }
 }
 
 a {
-  color: #2d72d9;
+  color: $link;
+  .night & {
+    color: $link-dark;
+  }
   text-decoration: none;
   &:visited {
-    color: #ef3eef;
+    .night & {
+      color: $visited-dark;
+    }
   }
 }
 
@@ -45,7 +78,10 @@ $sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews';
     display: block;
   }
   nav.#{$site} [data-from="#{$site}"] {
-    background: #eceef1;
+    background: $nav-bg;
+  }
+  .night nav.#{$site} [data-from="#{$site}"] {
+    background: $nav-bg-dark;
   }
 }
 
@@ -58,10 +94,6 @@ nav {
     width: 25%;
     display: inline-block;
     font-size: 1.2rem;
-    color: darken(#9BB3D9, 10%);
-    &:visited {
-      color: darken(#9BB3D9, 10%);
-    }
     span {
       pointer-events: none;
     }
@@ -80,35 +112,52 @@ h1 + p {
   margin-bottom: 2.1rem;
 }
 
+.contrast-controls {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  &::before {
+    content: '\263D';
+  }
+  .night &::before {
+    content: '\2600';
+  }
+}
+
 article {
   position: relative;
   padding: 1.5% 0 2%;
   display: none;
   font-size: 1.6rem;
-  border-bottom: 1px solid #eceef1;
+  border-bottom: 1px solid $article-border;
+  .night & {
+    border-bottom: 1px solid $article-border-dark;
+  }
   &:last-child {
     border-bottom: none;
   }
   .link-host {
-    color: #c3c9d2;
+    color: $recessed;
     font-size: 1.4rem;
     margin-right: 2%;
+    .night & {
+      color: $recessed-dark;
+    }
   }
   .pub-date {
-    color: #c3c9d2;
+    color: $recessed;
     margin-right: 2%;
     font-size: 1.4rem;
+    .night & {
+      color: $recessed-dark;
+    }
   }
   .comments, .tweet {
     font-size: 1.4rem;
     color: #9BB3D9;
-  }
-  header b {
-    position: absolute;
-    right: 2.1rem;
-    font-size: 5rem;
-    line-height: .9;
-    color: #c3c9d2;
+    .night & {
+      color: #879eb9;
+    }
   }
   .comments {
     margin-right: 2.1rem;
@@ -116,18 +165,22 @@ article {
 }
 
 .container {
-  background: #fff;
+  background: $container-bg;
   padding: 4% 2% 2%;
   margin-bottom: 1rem;
+  position: relative;
+  .night & {
+    background: $container-bg-dark;
+  }
 }
 
 footer {
   text-align: center;
   color: #9FACC1;
-  padding: 2.1rem0;
+  padding: 2.1rem;
   small {
     font-size: 1.4rem;
-    text-shadow: 0 1px 1px #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
   }
 }
 
@@ -140,15 +193,6 @@ footer {
   background: repeating-linear-gradient(90deg, wild_thing($base_colour));
 }
 
-// for the little guys...
-
-@media screen and (max-width: 900px) {
-  header {
-    b {
-      display: none;
-    }
-  }
-}
 @media (max-width: 750px) {
   body {
     padding: 0;

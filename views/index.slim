@@ -7,11 +7,13 @@ html
     meta content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport"
     style
       == scss :style, style: :compressed
+
   body
     .decoration
     .container
       h1 Code &amp; Design
       p Aggregator of Code, Security and Design news sites.
+      a.contrast-controls href="#dark"
       nav
         a href="#" data-from="hackernews" data-short="hn"
           span Hacker News
@@ -42,6 +44,11 @@ html
 
     javascript:
 
+      var theme = window.localStorage.getItem('day') || '1';
+      if (theme === '0') {
+        document.body.classList.add('night')
+      }
+
       var nav = document.querySelector('nav');
       var render = function() {
         ['hackernews', 'thehackernews', 'designernews', 'arssecurity'].forEach(function(d) {
@@ -61,6 +68,19 @@ html
           window.localStorage.setItem(e.target.dataset.from, '1') :
           window.localStorage.setItem(e.target.dataset.from, '0');
         render();
+      });
+
+      var contrastControl = document.querySelector('a.contrast-controls');
+      contrastControl.addEventListener('click', function(e) {
+        e.preventDefault();
+        var theme = window.localStorage.getItem('day') || '1';
+        if (theme === '1') {
+          window.localStorage.setItem('day', '0');
+          document.body.classList.add('night');
+        } else {
+          window.localStorage.setItem('day', '1');
+          document.body.classList.remove('night');
+        }
       });
 
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
