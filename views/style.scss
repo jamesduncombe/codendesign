@@ -21,7 +21,8 @@ $body-bg: #eceef1;
 $body-bg-dark: #2b3138;
 
 $body-copy: #555;
-$body-copy-dark: #bcbec1;
+// $body-copy-dark: #bcbec1;
+$body-copy-dark: #757e89;
 
 $link: #2d72d9;
 $link-dark: #126dda;
@@ -103,12 +104,12 @@ nav {
 h1 {
   margin-bottom: .8rem;
   line-height: 1;
-  font-size: 4.2rem;
-  letter-spacing: -0.175rem;
+  font-size: 3.6rem;
+  letter-spacing: -0.125rem;
 }
 
 h1 + p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-bottom: 2.1rem;
 }
 
@@ -215,7 +216,7 @@ footer {
   }
   article {
     font-size: 1.4rem;
-    padding: 2.1rem 1.5% 25px;
+    padding: 2.1rem 0 2.1rem;
     header {
       .article {
         display: block;
