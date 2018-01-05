@@ -21,14 +21,13 @@ $body-bg: #eceef1;
 $body-bg-dark: #2b3138;
 
 $body-copy: #555;
-// $body-copy-dark: #bcbec1;
 $body-copy-dark: #757e89;
 
 $link: #2d72d9;
-$link-dark: #126dda;
+$link-dark: rgba(239,180,62,0.8);
 
 $visited: #ef3eef;
-$visited-dark: #c518c5;
+$visited-dark: #96690e;
 
 $nav-bg: #eceef1;
 $nav-bg-dark: #2b3138;
@@ -53,6 +52,10 @@ body {
   color: $body-copy;
   line-height: 1.5;
   background: $body-bg;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   &.night {
     color: $body-copy-dark;
     background: $body-bg-dark;
@@ -157,7 +160,7 @@ article {
     font-size: 1.4rem;
     color: #9BB3D9;
     .night & {
-      color: #879eb9;
+      color: rgba(239,180,62,0.8);
     }
   }
   .comments {
@@ -170,6 +173,7 @@ article {
   padding: 4% 2% 2%;
   margin-bottom: 1rem;
   position: relative;
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
   .night & {
     background: $container-bg-dark;
   }
@@ -191,7 +195,10 @@ footer {
   height: 7px;
   width: 100%;
   overflow: hidden;
-  background: repeating-linear-gradient(90deg, wild_thing($base_colour));
+  background: $link;
+  .night & {
+    background: $link-dark;
+  }
 }
 
 @media (max-width: 750px) {
