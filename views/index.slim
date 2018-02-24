@@ -23,6 +23,8 @@ html
           span The Hacker News
         a href="#" data-from="arssecurity" data-short="ars"
           span Ars Security
+        a href="#" data-from="reddit" data-short="rdt"
+          span r/programming
       section.feeds
         - @items.each_with_index do |item,index|
           article class="#{item.from}"
@@ -51,7 +53,7 @@ html
 
       var nav = document.querySelector('nav');
       var render = function() {
-        ['hackernews', 'thehackernews', 'designernews', 'arssecurity'].forEach(function(d) {
+        ['hackernews', 'thehackernews', 'designernews', 'arssecurity', 'reddit'].forEach(function(d) {
           if (window.localStorage.getItem(d) === '1' || window.localStorage.getItem(d) === null) {
             nav.classList.add(d);
           } else {

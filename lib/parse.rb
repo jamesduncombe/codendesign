@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'digest/md5'
 
 require './lib/rss_parser'
+require './lib/atom_parser'
 
 Dir['./lib/sources/*.rb'].each { |f| require f }
 
@@ -13,7 +14,8 @@ module CD
       Sources::TheHackerNews,
       Sources::HackerNews,
       Sources::DesignerNews,
-      Sources::ArsSecurity
+      Sources::ArsSecurity,
+      Sources::Reddit
     ]
 
     def self.get_feeds

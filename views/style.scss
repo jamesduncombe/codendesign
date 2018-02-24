@@ -75,7 +75,7 @@ a {
   }
 }
 
-$sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews';
+$sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews', 'reddit';
 
 @each $site in $sites {
   .#{$site} + section .#{$site} {
@@ -95,7 +95,7 @@ nav {
     background: none;
     padding: 1% 0;
     text-align: center;
-    width: 25%;
+    width: (100% / 5);
     display: inline-block;
     font-size: 1.2rem;
     span {
