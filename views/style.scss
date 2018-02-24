@@ -9,22 +9,16 @@ $body-bg-dark: #2b3138;
 $body-copy: #555;
 $body-copy-dark: #757e89;
 
-$link: #2d72d9;
 $link-dark: rgba(239,180,62,0.8);
 
-$visited: #ef3eef;
 $visited-dark: #96690e;
 
-$nav-bg: #eceef1;
 $nav-bg-dark: #2b3138;
 
-$container-bg: #fff;
 $container-bg-dark: #22262b;
 
-$article-border: #eceef1;
 $article-border-dark: #2b3138;
 
-$recessed: #c3c9d2;
 $recessed-dark: #757e89;
 
 * { margin: 0; padding: 0; }
@@ -35,29 +29,20 @@ body {
   padding: 4%;
   font-family: "HelveticaNeue", helvetica, sans-serif;
   font-size: 1.4rem;
-  color: $body-copy;
+  color: $body-copy-dark;
   line-height: 1.5;
-  background: $body-bg;
+  background: $body-bg-dark;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  &.night {
-    color: $body-copy-dark;
-    background: $body-bg-dark;
-  }
 }
 
 a {
-  color: $link;
-  .night & {
-    color: $link-dark;
-  }
+  color: $link-dark;
   text-decoration: none;
   &:visited {
-    .night & {
-      color: $visited-dark;
-    }
+    color: $visited-dark;
   }
 }
 
@@ -68,9 +53,6 @@ $sites: 'thehackernews', 'hackernews', 'arssecurity', 'designernews', 'reddit';
     display: block;
   }
   nav.#{$site} [data-from="#{$site}"] {
-    background: $nav-bg;
-  }
-  .night nav.#{$site} [data-from="#{$site}"] {
     background: $nav-bg-dark;
   }
 }
@@ -108,10 +90,7 @@ h1 + p {
   right: 2vw;
   width: 20px;
   height: 20px;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTUgMTk1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojNzU3ZTg5O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MTBweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlVudGl0bGVkLTU8L3RpdGxlPjxwYXRoIGNsYXNzPSJhIiBkPSJNNDYuNDYsMTQwLjczQTk0LjEyLDk0LjEyLDAsMCwwLDEzMi4yMSw3LjUsOTQuMjEsOTQuMjEsMCwxLDEsNy41LDEzMi4yMyw5My45LDkzLjksMCwwLDAsNDYuNDYsMTQwLjczWiIvPjwvc3ZnPg==);
-  .night & {
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTAgMTkwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojNzU3ZTg5O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MTBweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlVudGl0bGVkLTQ8L3RpdGxlPjxwYXRoIGNsYXNzPSJhIiBkPSJNMTQ1LjEzLDk4QTQ3LjE0LDQ3LjE0LDAsMSwxLDk4LDUwLjg2LDQ3LjE0LDQ3LjE0LDAsMCwxLDE0NS4xMyw5OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zIC0zKSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iOTUiIHkxPSI1IiB4Mj0iOTUiIHkyPSIyNi4xOCIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iOTUiIHkxPSIxNjMuODIiIHgyPSI5NSIgeTI9IjE4NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iNSIgeTE9Ijk1IiB4Mj0iMjYuMTciIHkyPSI5NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMTYzLjgyIiB5MT0iOTUiIHgyPSIxODUiIHkyPSI5NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMzEuMzYiIHkxPSIzMS4zNiIgeDI9IjQ2LjM0IiB5Mj0iNDYuMzMiLz48bGluZSBjbGFzcz0iYSIgeDE9IjE0My42NyIgeTE9IjE0My42NiIgeDI9IjE1OC42NCIgeTI9IjE1OC42NCIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMzEuMzYiIHkxPSIxNTguNjQiIHgyPSI0Ni4zNCIgeTI9IjE0My42NiIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMTQzLjY3IiB5MT0iNDYuMzMiIHgyPSIxNTguNjQiIHkyPSIzMS4zNiIvPjwvc3ZnPg==);
-  }
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTAgMTkwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojNzU3ZTg5O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MTBweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlVudGl0bGVkLTQ8L3RpdGxlPjxwYXRoIGNsYXNzPSJhIiBkPSJNMTQ1LjEzLDk4QTQ3LjE0LDQ3LjE0LDAsMSwxLDk4LDUwLjg2LDQ3LjE0LDQ3LjE0LDAsMCwxLDE0NS4xMyw5OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zIC0zKSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iOTUiIHkxPSI1IiB4Mj0iOTUiIHkyPSIyNi4xOCIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iOTUiIHkxPSIxNjMuODIiIHgyPSI5NSIgeTI9IjE4NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iNSIgeTE9Ijk1IiB4Mj0iMjYuMTciIHkyPSI5NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMTYzLjgyIiB5MT0iOTUiIHgyPSIxODUiIHkyPSI5NSIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMzEuMzYiIHkxPSIzMS4zNiIgeDI9IjQ2LjM0IiB5Mj0iNDYuMzMiLz48bGluZSBjbGFzcz0iYSIgeDE9IjE0My42NyIgeTE9IjE0My42NiIgeDI9IjE1OC42NCIgeTI9IjE1OC42NCIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMzEuMzYiIHkxPSIxNTguNjQiIHgyPSI0Ni4zNCIgeTI9IjE0My42NiIvPjxsaW5lIGNsYXNzPSJhIiB4MT0iMTQzLjY3IiB5MT0iNDYuMzMiIHgyPSIxNTguNjQiIHkyPSIzMS4zNiIvPjwvc3ZnPg==);
 }
 
 article {
@@ -119,35 +98,23 @@ article {
   padding: 1.5% 0 2%;
   display: none;
   font-size: 1.6rem;
-  border-bottom: 1px solid $article-border;
-  .night & {
-    border-bottom: 1px solid $article-border-dark;
-  }
+  border-bottom: 1px solid $article-border-dark;
   &:last-child {
     border-bottom: none;
   }
   .link-host {
-    color: $recessed;
+    color: $recessed-dark;
     font-size: 1.4rem;
     margin-right: 2%;
-    .night & {
-      color: $recessed-dark;
-    }
   }
   .pub-date {
-    color: $recessed;
+    color: $recessed-dark;
     margin-right: 2%;
     font-size: 1.4rem;
-    .night & {
-      color: $recessed-dark;
-    }
   }
   .comments, .tweet {
     font-size: 1.4rem;
-    color: #9BB3D9;
-    .night & {
-      color: rgba(239,180,62,0.8);
-    }
+    color: rgba(239,180,62,0.8);
   }
   .comments {
     margin-right: 2.1rem;
@@ -155,14 +122,11 @@ article {
 }
 
 .container {
-  background: $container-bg;
+  background: $container-bg-dark;
   padding: 4% 2% 2%;
   margin-bottom: 1rem;
   position: relative;
   box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
-  .night & {
-    background: $container-bg-dark;
-  }
 }
 
 footer {
@@ -181,10 +145,7 @@ footer {
   height: 7px;
   width: 100%;
   overflow: hidden;
-  background: $link;
-  .night & {
-    background: $link-dark;
-  }
+  background: $link-dark;
 }
 
 @media (max-width: 750px) {
