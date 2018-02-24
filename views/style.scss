@@ -3,20 +3,6 @@ $stops: 23px, 59px, 113px, 137px, 163px, 191px;
 $stripes: 4;
 $base_colour: hsl(0, 85%, 59%);
 
-@function wild_thing($base_colour) {
-  $content: "";
-  @for $i from 1 through $stripes {
-    $last_i: $i + 1;
-    $colour: transparentize(adjust-hue($base_colour, $i * 10 * 10), 0.2);
-    $content: $content + "#{$colour} #{nth($stops, $i)},";
-    $content: $content + " #{$colour} #{nth($stops, $last_i)}";
-    @if $i < $stripes {
-      $content: $content + ",";
-    }
-  }
-  @return unquote($content);
-}
-
 $body-bg: #eceef1;
 $body-bg-dark: #2b3138;
 
