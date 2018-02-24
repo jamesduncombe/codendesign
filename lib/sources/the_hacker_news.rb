@@ -4,7 +4,7 @@ module Sources
     extend CD::RssParser
 
     def self.parse
-      get_feed('http://feeds.feedburner.com/TheHackersNews') do |xml|
+      get_feed('https://feeds.feedburner.com/TheHackersNews') do |xml|
         parse_feed(xml) do |item|
           {
             title: item.at('title').text,
