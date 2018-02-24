@@ -6,7 +6,6 @@ group :test, :development do
   gem 'minitest'
   gem 'rack-test'
   gem 'mina'
-  gem 'puma'
   gem 'awesome_print'
 end
 
