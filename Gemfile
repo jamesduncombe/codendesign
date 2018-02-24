@@ -10,7 +10,8 @@ group :test, :development do
   gem 'awesome_print'
 end
 
-gem 'nokogiri'
+gem 'rack', '~> 1.5.4'
+gem 'nokogiri', '~> 1.8.1'
 
 gem 'slim'
 gem 'sass'
