@@ -7,11 +7,13 @@ GEM
     mina (0.3.0)
       open4
       rake
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.5.3)
     minitest (4.4.0)
-    nokogiri (1.8.2)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.11.4)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     open4 (1.3.0)
+    racc (1.5.2)
     rack (1.5.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -40,7 +42,7 @@ DEPENDENCIES
   memcachier
   mina
   minitest
-  nokogiri (~> 1.8.1)
+  nokogiri (~> 1.11.4)
   rack (~> 1.5.4)
   rack-cache
   rack-test
