@@ -10,7 +10,7 @@ module CD
         maker.channel.author = 'James Duncombe'
         maker.channel.lastBuildDate = DateTime.now.rfc822
         maker.channel.title = 'Code & Design News'
-        maker.channel.link = 'http://codendesign.co'
+        maker.channel.link = 'http://cnd.jdun.co'
         maker.channel.description = 'Aggregator of Code, Security and Design news sites.'
 
         @feed_items.each do |item|
