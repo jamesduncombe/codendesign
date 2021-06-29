@@ -10,7 +10,7 @@ group :test, :development do
 end
 
 gem 'rack', '~> 1.5.4'
-gem 'nokogiri', '~> 1.8.1'
+gem 'nokogiri', '~> 1.11.4'
 
 gem 'slim'
 gem 'sass'
