@@ -5,15 +5,14 @@ gem 'sinatra', '~> 1.4.0'
 group :test, :development do
   gem 'minitest'
   gem 'rack-test'
-  gem 'mina'
   gem 'awesome_print'
 end
 
-gem 'rack', '~> 1.6.13'
-gem 'nokogiri', '~> 1.13.6'
-
-gem 'slim'
-gem 'sass'
+gem 'webrick'
+gem 'rack'
+gem 'nokogiri'
+gem 'rss'
+gem 'cgi'
 
 # Caching
 gem 'rack-cache'
