@@ -1,0 +1,162 @@
+* {
+	 margin: 0;
+	 padding: 0;
+}
+ html {
+	 font-size: 62.5%;
+}
+ body {
+	 padding: 4%;
+	 font-family: "HelveticaNeue", helvetica, sans-serif;
+	 font-size: 1.4rem;
+	 color: #757e89;
+	 line-height: 1.5;
+	 background: #2b3138;
+	 -webkit-text-size-adjust: 100%;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+	 text-rendering: optimizeLegibility;
+}
+ a {
+	 color: rgba(239, 180, 62, 0.8);
+	 text-decoration: none;
+}
+ a:visited {
+	 color: #96690e;
+}
+ .thehackernews + section .thehackernews {
+	 display: block;
+}
+ nav.thehackernews [data-from="thehackernews"] {
+	 background: #2b3138;
+}
+ .hackernews + section .hackernews {
+	 display: block;
+}
+ nav.hackernews [data-from="hackernews"] {
+	 background: #2b3138;
+}
+ .arssecurity + section .arssecurity {
+	 display: block;
+}
+ nav.arssecurity [data-from="arssecurity"] {
+	 background: #2b3138;
+}
+ .designernews + section .designernews {
+	 display: block;
+}
+ nav.designernews [data-from="designernews"] {
+	 background: #2b3138;
+}
+ .reddit + section .reddit {
+	 display: block;
+}
+ nav.reddit [data-from="reddit"] {
+	 background: #2b3138;
+}
+ nav {
+	 margin-bottom: 1rem;
+}
+ nav a {
+	 background: none;
+	 padding: 1% 0;
+	 text-align: center;
+	 width: 20%;
+	 display: inline-block;
+	 font-size: 1.2rem;
+}
+ nav a span {
+	 pointer-events: none;
+}
+ h1 {
+	 margin-bottom: 0.8rem;
+	 line-height: 1;
+	 font-size: 3.6rem;
+	 letter-spacing: -0.125rem;
+}
+ h1 + p {
+	 font-size: 1.4rem;
+	 margin-bottom: 2.1rem;
+}
+ article {
+	 position: relative;
+	 padding: 1.5% 0 2%;
+	 display: none;
+	 font-size: 1.6rem;
+	 border-bottom: 1px solid #2b3138;
+}
+ article:last-child {
+	 border-bottom: none;
+}
+ article .link-host {
+	 color: #757e89;
+	 font-size: 1.4rem;
+	 margin-right: 2%;
+}
+ article .pub-date {
+	 color: #757e89;
+	 margin-right: 2%;
+	 font-size: 1.4rem;
+}
+ article .comments, article .tweet {
+	 font-size: 1.4rem;
+	 color: rgba(239, 180, 62, 0.8);
+}
+ article .comments {
+	 margin-right: 2.1rem;
+}
+ .container {
+	 background: #22262b;
+	 padding: 4% 2% 2%;
+	 margin-bottom: 1rem;
+	 position: relative;
+	 box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+ footer {
+	 text-align: center;
+	 color: #9facc1;
+	 padding: 2.1rem;
+}
+ footer small {
+	 font-size: 1.4rem;
+	 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+ .decoration {
+	 height: 7px;
+	 width: 100%;
+	 overflow: hidden;
+	 background: rgba(239, 180, 62, 0.8);
+}
+ @media (max-width: 750px) {
+	 body {
+		 padding: 0;
+		 font-size: 1.4rem;
+	}
+	 nav {
+		 width: 104.1666666667%;
+		 margin-left: -2.0833333333%;
+	}
+	 nav a {
+		 font-size: 1.2rem;
+		 padding: 2% 0;
+	}
+	 nav a span {
+		 display: none;
+	}
+	 nav a::before {
+		 content: attr(data-short);
+		 text-transform: uppercase;
+	}
+	 article {
+		 font-size: 1.4rem;
+		 padding: 2.1rem 0 2.1rem;
+	}
+	 article header .article {
+		 display: block;
+		 margin-bottom: 1.1rem;
+	}
+	 article .link-host {
+		 display: none;
+	}
+}
+

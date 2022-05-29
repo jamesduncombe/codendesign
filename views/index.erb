@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Code &amp; Design</title>
+    <meta content="Aggregator of Code, Security and Design news sites" name="description" />
+    <meta content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+  </head> 
+  <body>
+    <div class="decoration">
+    </div>
+    <div class="container">
+      <h1>Code &amp; Design</h1>
+      <p>Aggregator of Code, Security and Design news sites.</p>
+      <nav>
+        <a data-from="hackernews" data-short="hn" href="#">
+          <span>Hacker News</span>
+        </a><a data-from="designernews" data-short="dn" href="#">
+          <span>Designer News</span>
+        </a><a data-from="thehackernews" data-short="thn" href="#">
+          <span>The Hacker News</span>
+        </a><a data-from="arssecurity" data-short="ars" href="#">
+          <span>Ars Security</span>
+        </a><a data-from="reddit" data-short="rdt" href="#">
+          <span>r/programming</span>
+        </a></nav>
+      <section class="feeds">
+        <% @items.each_with_index do |item,index|
+ %><article<% _temple_html_attributeremover1 = (item.from).to_s %><% if !_temple_html_attributeremover1.empty? %> class="<%= _temple_html_attributeremover1 %>"<% end %>>
+          <header>
+            <a class="article" href="<%= item.link %>"><%= item.title %>
+            </a></header>
+          <span class="pub-date"><%= item.updated_at.strftime("%d/%m/%y") %>
+          </span><a class="comments" href="<%= item.link_to_comments %>">Comments</a>
+          <span class="link-host"><%= item.link_host %>
+          </span></article>
+      <% end %></section>
+  </div>
+  <footer>
+    <small>
+      Build by
+      <a href="http://jamesduncombe.com">JD</a>
+      - Feeds:
+      <a href="/feed.json">JSON</a>
+      or
+      <a href="/feed.xml">XML</a>
+      -
+      <a href="https://github.com/jamesduncombe/codendesign">GitHub
+      </a>
+    </small></footer>
+  <script>
+    var nav = document.querySelector('nav');
+
+    var render = function() {
+      ['hackernews', 'thehackernews', 'designernews', 'arssecurity', 'reddit'].forEach(function(d) {
+        if (window.localStorage.getItem(d) === '1' || window.localStorage.getItem(d) === null) {
+          nav.classList.add(d);
+        } else {
+          nav.classList.remove(d);
+        }
+      });
+    };
+
+    render();
+
+    nav.addEventListener('click', function(e) {
+      e.preventDefault();
+      var opt = window.localStorage.getItem(e.target.dataset.from) || '1';
+      (opt === '0') ?
+        window.localStorage.setItem(e.target.dataset.from, '1') :
+        window.localStorage.setItem(e.target.dataset.from, '0');
+      render();
+    });
+  </script>
+</body></html>
