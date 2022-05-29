@@ -5,7 +5,7 @@ module CD::RssParser
   private
 
   def get_feed(endpoint, &block)
-    xml = Nokogiri::XML(open(endpoint))
+    xml = Nokogiri::XML(URI.open(endpoint))
     block.call(xml)
   rescue
     []

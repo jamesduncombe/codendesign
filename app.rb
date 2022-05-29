@@ -1,16 +1,17 @@
 #
 # Main Aggregator
 #
+require 'rubygems'
 require 'bundler'
-Bundler.require
+Bundler.require(:default)
 
-%w(open-uri cgi rss).each { |f| require f }
+require 'open-uri'
+require 'rss'
+require 'cgi'
 
 %w(parse item rss json rss_parser).each { |f| require "./lib/#{f}"}
 
 Dir['./lib/sources/*.rb'].each { |f| require f }
-
-set :slim, format: :html
 
 # Routes
 
@@ -21,7 +22,7 @@ before do
 end
 
 get '/' do
-  slim :index
+  erb :index
 end
 
 # Feed addresses
