@@ -13,8 +13,3 @@ gem 'rack'
 gem 'nokogiri'
 gem 'rss'
 gem 'cgi'
-
-# Caching
-gem 'rack-cache'
-gem 'memcachier'
-gem 'dalli'
