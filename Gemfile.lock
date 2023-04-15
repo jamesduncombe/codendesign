@@ -2,16 +2,12 @@ GEM
   remote: https://rubygems.org/
   specs:
     awesome_print (1.9.2)
-    cgi (0.3.2)
-    dalli (3.2.1)
-    memcachier (0.0.2)
+    cgi (0.3.5)
     minitest (5.15.0)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     racc (1.6.0)
     rack (1.6.13)
-    rack-cache (1.13.0)
-      rack (>= 0.4)
     rack-protection (1.5.5)
       rack
     rack-test (1.1.0)
@@ -27,17 +23,15 @@ GEM
     webrick (1.7.0)
 
 PLATFORMS
+  x86_64-linux
   x86_64-linux-musl
 
 DEPENDENCIES
   awesome_print
   cgi
-  dalli
-  memcachier
   minitest
   nokogiri
   rack
-  rack-cache
   rack-test
   rss
   sinatra (~> 1.4.0)
